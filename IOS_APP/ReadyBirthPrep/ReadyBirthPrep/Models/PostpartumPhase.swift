@@ -75,7 +75,7 @@ struct PostpartumRecovery: Codable {
 }
 
 struct PostpartumSymptom: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var symptom: SymptomType
     var severity: SymptomSeverity
     var dateReported: Date
@@ -99,7 +99,7 @@ enum SymptomSeverity: String, Codable, CaseIterable {
 }
 
 struct CompletedExercise: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var exerciseId: UUID
     var completedAt: Date
     var duration: TimeInterval

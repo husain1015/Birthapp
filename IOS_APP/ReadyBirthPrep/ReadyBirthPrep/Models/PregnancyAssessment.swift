@@ -298,7 +298,7 @@ enum BreastfeedingPlan: String, Codable, CaseIterable {
 }
 
 struct RiskFactor: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var category: RiskCategory
     var factor: String
     var severity: RiskSeverity

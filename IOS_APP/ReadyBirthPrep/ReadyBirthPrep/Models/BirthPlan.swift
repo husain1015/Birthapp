@@ -32,7 +32,7 @@ struct BirthPlan: Codable, Identifiable {
 }
 
 struct CustomPreference: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var category: String
     var preference: String
     var importance: ImportanceLevel
@@ -74,7 +74,7 @@ enum VisitorPreference: String, Codable, CaseIterable {
 }
 
 struct SupportPerson: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var name: String
     var relationship: String
     var role: String

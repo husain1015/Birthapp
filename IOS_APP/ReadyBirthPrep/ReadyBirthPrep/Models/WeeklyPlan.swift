@@ -43,7 +43,7 @@ struct WeeklyPlan: Codable, Identifiable {
 }
 
 struct ExerciseDay: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var dayNumber: Int // 1, 2, or 3
     var exercises: [WeeklyExercise]
     var totalDuration: Int // in minutes
@@ -57,7 +57,7 @@ struct ExerciseDay: Codable, Identifiable {
 }
 
 struct WeeklyExercise: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var name: String
     var category: WeeklyExerciseCategory
     var duration: Int // in minutes
@@ -89,7 +89,7 @@ enum IntensityLevel: String, Codable, CaseIterable {
 }
 
 struct NutritionGoal: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var category: NutritionCategory
     var goal: String
     var targetAmount: String?
@@ -111,7 +111,7 @@ enum NutritionCategory: String, Codable, CaseIterable {
 }
 
 struct EducationTopic: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var title: String
     var category: EducationCategory
     var description: String
@@ -133,7 +133,7 @@ enum EducationCategory: String, Codable, CaseIterable {
 }
 
 struct SelfCareActivity: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var name: String
     var category: SelfCareCategory
     var duration: Int // in minutes
@@ -153,7 +153,7 @@ enum SelfCareCategory: String, Codable, CaseIterable {
 }
 
 struct PreparationTask: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var title: String
     var category: PrepCategory
     var description: String
@@ -181,7 +181,7 @@ enum TaskPriority: String, Codable, CaseIterable {
 }
 
 struct SymptomManagement: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var symptom: String
     var commonInWeek: Bool
     var managementTips: [String]
@@ -190,7 +190,7 @@ struct SymptomManagement: Codable, Identifiable {
 }
 
 struct ProviderReminder: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var reminderType: ReminderType
     var title: String
     var description: String

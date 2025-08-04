@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Workout History Models
 
 struct WorkoutSession: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     let userId: UUID
     let exerciseId: UUID
     let exerciseName: String
@@ -28,7 +28,7 @@ struct WorkoutSession: Codable, Identifiable {
 }
 
 struct DailyWorkoutSummary: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     let userId: UUID
     let date: Date
     let weekNumber: Int
@@ -45,7 +45,7 @@ struct DailyWorkoutSummary: Codable, Identifiable {
 }
 
 struct WeeklyWorkoutSummary: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     let userId: UUID
     let weekNumber: Int
     let startDate: Date
@@ -96,7 +96,7 @@ struct ExerciseStreak: Codable {
 }
 
 struct Accomplishment: Codable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     let userId: UUID
     let type: AccomplishmentType
     let title: String

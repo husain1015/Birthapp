@@ -23,7 +23,7 @@ struct ContractionTimerView: View {
                 
                 ContractionListView(contractions: session.contractions)
             } else {
-                EmptyStateView()
+                ContractionEmptyStateView()
             }
         }
         .navigationTitle("Contraction Timer")
@@ -33,7 +33,7 @@ struct ContractionTimerView: View {
         }.disabled(session.contractions.isEmpty))
         .sheet(isPresented: $showingIntensityPicker) {
             IntensityPickerView(contraction: $pendingContraction) { contraction in
-                if var finalContraction = contraction {
+                if let finalContraction = contraction {
                     session.contractions.append(finalContraction)
                 }
                 showingIntensityPicker = false
@@ -238,7 +238,7 @@ struct IntensityIndicator: View {
     }
 }
 
-struct EmptyStateView: View {
+struct ContractionEmptyStateView: View {
     var body: some View {
         VStack(spacing: 20) {
             Image(systemName: "waveform.path.ecg")
